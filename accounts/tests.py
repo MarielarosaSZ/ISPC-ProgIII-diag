@@ -21,13 +21,13 @@ class AccountsAPITest(APITestCase):
         register_url = reverse('register')
         login_url = reverse('login')
         self.client.post(register_url, {
-            'username': 'testuser',
-            'email': 'test@example.com',
-            'password': 'Testpass123'
+            'username': 'mariela',
+            'email': 'mariela@example.com',
+            'password': 'yoprobe123'
         }, format='json')
         response = self.client.post(login_url, {
-            'username': 'testuser',
-            'password': 'Testpass123'
+            'username': 'mariela',
+            'password': 'yoprobe123'
         }, format='json')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertIn('access', response.data)
